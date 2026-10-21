@@ -33,12 +33,16 @@ O primeiro passo da Gíria Mestre é um **caderno de campanhas de uso pessoal do
 
 ## Escopo: MVP, próximas fases e fora de escopo
 
-O MVP é só para o mestre e cobre três coisas: as páginas da campanha (personagens, locais, facções e itens), os diários de sessão e o histórico. Compartilhar com jogadores e a gestão comercial ficam para quando o caderno estiver em uso.
+O MVP é só para o mestre e cobre quatro coisas: as páginas da campanha (personagens, locais, facções e itens), os diários de sessão, o histórico e um assistente que lê o PDF da aventura e os backgrounds para sugerir a preparação da próxima sessão. Compartilhar com jogadores e a gestão comercial ficam para quando o caderno estiver em uso.
 
 **MVP (caderno do mestre)**
 
+- **Painel de campanhas:** primeira tela após o login, com uma miniatura por campanha (capa, nome, sessões, próxima sessão e ganchos em aberto). Cada miniatura abre o resumo da campanha.
+- **Resumo da campanha:** nome, descrição, última sessão com o que aconteceu, próximas sessões e as sugestões de preparação.
+- **Material da campanha:** envio do PDF da aventura; a plataforma lê o conteúdo e acompanha em que capítulo o grupo está.
+- **Assistente de preparação:** a partir do PDF, dos backgrounds e do histórico, sugere o que vem pela frente, ganchos para tratar e objetivos pessoais de cada personagem, sempre citando a fonte. O mestre aceita, edita ou descarta.
 - **Mesas:** nome, sistema (Tormenta 20 como padrão), cenário, status (em andamento, pausada, encerrada), sinopse, jogadores e capa. Cada mesa é isolada das outras.
-- **Personagens:** PJs e NPCs, com aparência, personalidade, background, objetivos, relacionamentos, situação (vivo, morto, desaparecido), retrato, notas secretas e campos opcionais de T20 (raça, classe, origem, divindade, nível).
+- **Personagens:** PJs e NPCs, com aparência, personalidade, background, objetivos (inclusive os sugeridos e aceitos), relacionamentos, situação (vivo, morto, desaparecido), retrato, notas secretas e campos opcionais de T20 (raça, classe, origem, divindade, nível).
 - **Locais, facções e itens:** páginas próprias com descrição, imagem, notas secretas e ligações (ex.: facção sediada num local, item em posse de um personagem).
 - **Diário de sessão:** preparação antes da sessão e relato depois, com acontecimentos e ganchos.
 - **Menções:** citar qualquer página no texto (ex.: @Kael, @Valkaria) cria o vínculo, e a página mostra em que sessões apareceu.
@@ -55,7 +59,7 @@ O MVP é só para o mestre e cobre três coisas: as páginas da campanha (person
 - Tags e filtros; mapa visual de relacionamentos entre personagens e facções.
 - Modelos de diário e de personagem; calendário do mundo de jogo.
 - Uso sem internet, se a conexão durante as sessões se mostrar um problema.
-- Resumo de sessão assistido por IA a partir das anotações.
+- Resumo automático do relato a partir das anotações feitas durante a sessão.
 
 **Fase 3 (expansão)**
 
@@ -71,7 +75,7 @@ O MVP é só para o mestre e cobre três coisas: as páginas da campanha (person
 
 ## Requisitos funcionais
 
-São 17 requisitos, todos do MVP.
+São 22 requisitos, todos do MVP; RF18 a RF22 cobrem o painel e o assistente de preparação.
 
 | ID | Requisito |
 | --- | --- |
@@ -92,6 +96,11 @@ São 17 requisitos, todos do MVP.
 | RF15 | O editor aceita formatação básica, imagens, colagem de textos longos e salva automaticamente. |
 | RF16 | O mestre exporta uma mesa inteira em Markdown ou PDF. |
 | RF17 | Itens excluídos vão para uma lixeira e podem ser restaurados. |
+| RF18 | Após o login, o mestre vê o painel com uma miniatura por campanha, filtrável por status; clicar abre o resumo da campanha. |
+| RF19 | O resumo mostra nome, descrição, última sessão com seus eventos, próximas sessões e as sugestões para a próxima. |
+| RF20 | O mestre envia o PDF da aventura; o sistema extrai o texto, divide em capítulos e o mestre indica (ou confirma) o capítulo atual. |
+| RF21 | O assistente gera, para a próxima sessão, uma síntese do que vem, ganchos sugeridos e objetivos pessoais por personagem, cada item com a fonte (página do PDF, background ou sessão). |
+| RF22 | O mestre aceita, edita ou descarta cada sugestão; as aceitas viram ganchos, objetivos do personagem ou itens da preparação. |
 
 ## Requisitos não funcionais
 
@@ -129,10 +138,14 @@ As regras do caderno são sobre como as informações se ligam e como nada se pe
 | RN12 | Ganchos | Ao criar uma nova sessão, os ganchos em aberto aparecem na preparação (sugerido). |
 | RN13 | Imagens | Imagens pertencem à mesa e são privadas; limite sugerido de 10 MB por arquivo. |
 | RN14 | Exclusão | Excluir manda para a lixeira por 30 dias antes de apagar de vez (sugerido). |
+| RN15 | Assistente | O assistente só sugere: nada entra no caderno sem o mestre aceitar. Sugestões descartadas não voltam na mesma geração. |
+| RN16 | Assistente | Toda sugestão cita a fonte (página do PDF, background de um personagem ou sessão). Sem fonte, não é exibida. |
+| RN17 | Assistente | As sugestões são geradas quando o mestre pede ou quando uma sessão vira Realizada (sugerido), para controlar custo. |
+| RN18 | Material | O PDF é privado da mesa e usado só para gerar as sugestões; uma mesa pode ter mais de um PDF (aventura e suplementos). |
 
 ## Entidades e modelo de dados
 
-O MVP precisa de 8 entidades. Personagens, locais, facções e itens são tipos de uma mesma entidade, a Página, e por isso todos podem ser mencionados e ligados entre si. A Aparição é o que faz o caderno se organizar sozinho: nasce de cada menção no diário.
+O MVP precisa de 10 entidades: as 8 do diagrama mais Material (o PDF da aventura) e Sugestão (o que o assistente propõe), ambas ligadas à mesa. Personagens, locais, facções e itens são tipos de uma mesma entidade, a Página, e por isso todos podem ser mencionados e ligados entre si. A Aparição é o que faz o caderno se organizar sozinho: nasce de cada menção no diário.
 
 ```mermaid
 erDiagram
@@ -144,6 +157,8 @@ erDiagram
     PAGINA ||--o{ LIGACAO : "liga-se a outra"
     SESSAO ||--o{ EVENTO : "gera"
     SESSAO ||--o{ GANCHO : "abre"
+    MESA ||--o{ MATERIAL : "usa"
+    MESA ||--o{ SUGESTAO : "recebe"
 ```
 
 Eventos também se ligam às páginas envolvidas, e um gancho guarda a sessão em que surgiu e a sessão em que foi resolvido.
@@ -162,6 +177,8 @@ Eventos também se ligam às páginas envolvidas, e um gancho guarda a sessão e
 | Evento | mesa, sessão, título, descrição, páginas envolvidas, data no mundo de jogo (opcional) |
 | Gancho | mesa, descrição, sessão de origem, status, sessão de resolução |
 | Imagem | mesa, arquivo, legenda, tipo (retrato, mapa, handout) |
+| Material | mesa, arquivo PDF, título, capítulos extraídos, capítulo atual, status do processamento |
+| Sugestão | mesa, sessão alvo, tipo (síntese, gancho, objetivo pessoal), texto, fontes, personagem (para objetivos), status (nova, aceita, descartada) |
 
 ## Fluxos principais
 
@@ -211,6 +228,9 @@ O maior risco é virar "mais um Notion": ferramentas como Notion, Obsidian, Worl
 | Migrar as anotações antigas dá trabalho demais | Médio | São só 3 mesas: começar colando os textos atuais e um resumo por mesa; importação assistida na Fase 2 |
 | Editor ruim no celular atrapalha durante a sessão | Médio | No celular, priorizar leitura e anotação rápida; escrita longa no computador |
 | Expandir para jogadores exigir refazer o sistema | Médio | Notas secretas marcadas desde já e dados separados por usuário (RN05, RNF09) |
+| Sugestões da IA erradas ou genéricas | Alto | Fonte obrigatória em cada sugestão, aceite do mestre, testar com os PDFs e backgrounds reais das 3 mesas |
+| PDF escaneado ou muito grande não é lido bem | Médio | Mostrar o status do processamento e os capítulos extraídos para o mestre conferir; OCR se necessário |
+| Custo da IA crescer | Médio | Gerar sob demanda (RN17), enviar só o capítulo atual e o resumo do histórico, e acompanhar o gasto mensal |
 
 ## Checklist pré-desenvolvimento e próximos passos
 
