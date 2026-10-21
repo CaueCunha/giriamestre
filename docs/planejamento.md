@@ -14,8 +14,7 @@ O primeiro passo da Gíria Mestre é um **caderno de campanhas de uso pessoal do
 | Mesas no mesmo mundo | Não, cada campanha é única | Cada mesa é isolada; mundos compartilhados saem do roadmap |
 | Locais, facções e itens já no começo | Sim | Entram no MVP como páginas próprias, mencionáveis com @ |
 | Mesas em andamento | 3, com novas no futuro | As 3 mesas são a meta de migração; criar mesas novas é livre |
-
-Falta uma resposta: **a plataforma será consultada durante a sessão, no celular ou no notebook, e precisa funcionar sem internet?** Até lá, o plano assume consulta no celular com internet.
+| Uso durante a sessão | Sim, no celular e no desktop | Interface responsiva desde o primeiro dia: cada tela é desenhada para celular e desktop; uso sem internet continua na Fase 2 |
 
 ## Visão do produto
 
@@ -55,7 +54,7 @@ O MVP é só para o mestre e cobre três coisas: as páginas da campanha (person
 - Importação assistida: colar uma conversa ou documento de anotações e a plataforma sugerir as páginas e sessões a criar.
 - Tags e filtros; mapa visual de relacionamentos entre personagens e facções.
 - Modelos de diário e de personagem; calendário do mundo de jogo.
-- Uso sem internet (se a resposta pendente pedir).
+- Uso sem internet, se a conexão durante as sessões se mostrar um problema.
 - Resumo de sessão assistido por IA a partir das anotações.
 
 **Fase 3 (expansão)**
@@ -102,7 +101,7 @@ O caderno precisa ser privado, rápido de consultar durante a sessão e nunca pe
 | --- | --- | --- |
 | RNF01 | Privacidade | Todo o conteúdo é privado do mestre; nada fica público sem ação explícita. |
 | RNF02 | Segurança dos textos | Salvamento automático a cada poucos segundos e histórico de versões nos textos longos (background e diário). |
-| RNF03 | Usabilidade | Leitura confortável no celular durante a sessão; escrita longa pensada para o computador. |
+| RNF03 | Usabilidade | Interface responsiva: todas as telas funcionam no celular e no desktop. No celular, prioridade para consulta rápida e anotações curtas durante a sessão; no desktop, escrita longa e visão lado a lado (ex.: diário e página do personagem). |
 | RNF04 | Desempenho | Busca devolve resultados em menos de 1 segundo; páginas abrem em menos de 2 segundos. |
 | RNF05 | Portabilidade | Exportação em formato aberto (Markdown): os dados continuam do mestre se a plataforma mudar. |
 | RNF06 | Backup | Backup diário automático do banco e das imagens. |
@@ -215,18 +214,18 @@ O maior risco é virar "mais um Notion": ferramentas como Notion, Obsidian, Worl
 
 ## Checklist pré-desenvolvimento e próximos passos
 
-Com as respostas, o escopo do MVP está fechado, só falta saber se a plataforma será usada no celular durante a sessão; o próximo passo são os wireframes.
+Com todas as respostas, o escopo do MVP está fechado; o próximo passo são os wireframes, em versão celular e desktop.
 
 **Produto**
 
 - [x] Visão, escopo, requisitos e regras do caderno (este documento)
-- [ ] Responder as perguntas em aberto (falta: uso no celular e sem internet)
+- [x] Responder as perguntas em aberto
 - [ ] Escrever as histórias de usuário do MVP com critérios de aceite
 - [ ] Escolher uma mesa real para ser a primeira a entrar na plataforma
 
 **Design**
 
-- [ ] Wireframes: página da mesa, página do personagem, diário de sessão, linha do tempo e busca
+- [ ] Wireframes em celular e desktop: página da mesa, página do personagem, diário de sessão, linha do tempo e busca
 - [ ] Protótipo clicável testado com essa mesa real
 - [ ] Identidade visual básica (cores, tipografia, tom de fantasia)
 
