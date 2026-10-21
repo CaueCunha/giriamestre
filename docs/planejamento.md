@@ -2,19 +2,20 @@
 
 > Versão de 21/10/2026. Documento vivo: a versão editável e comentável está no [Claude Docs](https://claude.ai/artifact/VTtJhE5XBhKLnfc6ESEYna).
 
-## Premissas e perguntas em aberto
+## Premissas e respostas
 
-O primeiro passo da Gíria Mestre é um **caderno de campanhas de uso pessoal do mestre**: um repositório das mesas em andamento com personagens, diários de sessão e o histórico de tudo que aconteceu. A gestão comercial (agenda, jogadores pagantes, cobranças) fica para uma fase futura e está descrita em [fase-futura-gestao-comercial.md](fase-futura-gestao-comercial.md).
+O primeiro passo da Gíria Mestre é um **caderno de campanhas de uso pessoal do mestre** para as campanhas de Tormenta 20: um lugar único com personagens, locais, facções, itens, diários de sessão e o histórico de cada mesa. A gestão comercial (agenda, jogadores pagantes, cobranças) fica para uma fase futura e está em [fase-futura-gestao-comercial.md](fase-futura-gestao-comercial.md).
 
-Perguntas que mudam o escopo:
+| Pergunta | Resposta | O que muda no plano |
+| --- | --- | --- |
+| Sistemas mestrados | Tormenta 20 | Personagens ganham campos opcionais de T20 (raça, classe, origem, divindade, nível), sem ficha mecânica |
+| Onde estão as anotações hoje | Projetos separados por campanha e uma conversa de anotações; a ideia é unificar tudo | No MVP o conteúdo entra colando os textos; importação assistida fica na Fase 2 |
+| Guardar imagens | Sim | Retratos, capa da mesa e uma galeria por mesa para mapas e handouts |
+| Mesas no mesmo mundo | Não, cada campanha é única | Cada mesa é isolada; mundos compartilhados saem do roadmap |
+| Locais, facções e itens já no começo | Sim | Entram no MVP como páginas próprias, mencionáveis com @ |
+| Mesas em andamento | 3, com novas no futuro | As 3 mesas são a meta de migração; criar mesas novas é livre |
 
-1. Quais sistemas e cenários são mestrados (D&D 5e, Tormenta, Ordem Paranormal, cenário próprio)? Considerei que as anotações são narrativas, sem ficha mecânica com atributos e cálculos.
-2. Onde estão as anotações hoje (Notion, Obsidian, Google Docs, caderno)? Vale importar o que já existe?
-3. A plataforma vai ser consultada durante a sessão, no celular ou no notebook? Precisa funcionar sem internet?
-4. É preciso guardar imagens: retratos de personagens, mapas, handouts?
-5. Algumas mesas compartilham o mesmo mundo, com NPCs e lugares em comum?
-6. Além de personagens, é preciso registrar locais, facções e itens já no começo, ou isso pode esperar?
-7. Quantas mesas estão em andamento hoje e mais ou menos quantas sessões cada uma já teve?
+Falta uma resposta: **a plataforma será consultada durante a sessão, no celular ou no notebook, e precisa funcionar sem internet?** Até lá, o plano assume consulta no celular com internet.
 
 ## Visão do produto
 
@@ -33,27 +34,28 @@ Perguntas que mudam o escopo:
 
 ## Escopo: MVP, próximas fases e fora de escopo
 
-O MVP é só para o mestre e cobre três coisas: personagens, diários de sessão e histórico. Compartilhar com jogadores e a gestão comercial ficam para quando o caderno estiver em uso.
+O MVP é só para o mestre e cobre três coisas: as páginas da campanha (personagens, locais, facções e itens), os diários de sessão e o histórico. Compartilhar com jogadores e a gestão comercial ficam para quando o caderno estiver em uso.
 
 **MVP (caderno do mestre)**
 
-- **Mesas:** nome, sistema, cenário, status (em andamento, pausada, encerrada), sinopse, jogadores e capa.
-- **Personagens:** PJs e NPCs, com aparência, personalidade, background, objetivos, relacionamentos, situação (vivo, morto, desaparecido), retrato e notas secretas do mestre.
-- **Diário de sessão:** preparação antes da sessão e relato depois, com personagens presentes, acontecimentos e ganchos.
-- **Histórico da mesa:** linha do tempo de eventos marcantes, ligados à sessão e aos personagens envolvidos.
+- **Mesas:** nome, sistema (Tormenta 20 como padrão), cenário, status (em andamento, pausada, encerrada), sinopse, jogadores e capa. Cada mesa é isolada das outras.
+- **Personagens:** PJs e NPCs, com aparência, personalidade, background, objetivos, relacionamentos, situação (vivo, morto, desaparecido), retrato, notas secretas e campos opcionais de T20 (raça, classe, origem, divindade, nível).
+- **Locais, facções e itens:** páginas próprias com descrição, imagem, notas secretas e ligações (ex.: facção sediada num local, item em posse de um personagem).
+- **Diário de sessão:** preparação antes da sessão e relato depois, com acontecimentos e ganchos.
+- **Menções:** citar qualquer página no texto (ex.: @Kael, @Valkaria) cria o vínculo, e a página mostra em que sessões apareceu.
+- **Histórico da mesa:** linha do tempo de eventos marcantes, ligados à sessão e às páginas envolvidas.
 - **Ganchos em aberto:** pendências da trama por mesa, marcadas como resolvidas quando fecham.
-- **Menções:** citar um personagem no texto (ex.: @Kael) cria o vínculo e a página dele mostra onde ele apareceu.
-- **Busca** em todas as mesas, personagens e diários.
+- **Imagens:** retratos, capas e uma galeria por mesa para mapas e handouts.
+- **Busca** em todas as mesas e páginas.
 - **Editor de texto** com formatação, imagens e salvamento automático.
 - **Exportar** tudo (Markdown ou PDF) e backup.
 
 **Fase 2 (caderno mais completo, ainda só do mestre)**
 
-- Locais, facções e itens como páginas próprias, com menções.
-- Tags e filtros; mapa visual de relacionamentos entre personagens.
+- Importação assistida: colar uma conversa ou documento de anotações e a plataforma sugerir as páginas e sessões a criar.
+- Tags e filtros; mapa visual de relacionamentos entre personagens e facções.
 - Modelos de diário e de personagem; calendário do mundo de jogo.
-- Mundos compartilhados entre mesas.
-- Importação de Notion, Obsidian ou Google Docs; uso sem internet.
+- Uso sem internet (se a resposta pendente pedir).
 - Resumo de sessão assistido por IA a partir das anotações.
 
 **Fase 3 (expansão)**
@@ -70,25 +72,27 @@ O MVP é só para o mestre e cobre três coisas: personagens, diários de sessã
 
 ## Requisitos funcionais
 
-São 15 requisitos, todos do MVP.
+São 17 requisitos, todos do MVP.
 
 | ID | Requisito |
 | --- | --- |
 | RF01 | O mestre faz login com e-mail e senha (ou Google). |
-| RF02 | O mestre cria, edita, pausa, encerra e arquiva mesas. |
-| RF03 | A página da mesa mostra sinopse, personagens, sessões, ganchos em aberto e linha do tempo. |
-| RF04 | O mestre cria personagens do tipo PJ (com o nome do jogador) ou NPC, com os campos de background. |
-| RF05 | Cada personagem tem um campo de notas secretas, visível só para o mestre. |
-| RF06 | O mestre registra relacionamentos entre personagens (ex.: "irmã de", "deve um favor a"). |
-| RF07 | O mestre cria uma sessão com número, data, título, preparação e relato. |
-| RF08 | Ao escrever, o mestre menciona personagens com @ e o sistema registra a aparição na sessão. |
-| RF09 | A página do personagem lista as sessões em que ele apareceu e os eventos de que participou. |
-| RF10 | O mestre registra eventos marcantes na linha do tempo, ligados a uma sessão e a personagens. |
-| RF11 | O mestre cria ganchos, os liga à sessão em que surgiram e os marca como resolvidos. |
-| RF12 | A busca encontra mesas, personagens, sessões e trechos de texto. |
-| RF13 | O editor aceita formatação básica, imagens e salva automaticamente. |
-| RF14 | O mestre exporta uma mesa inteira em Markdown ou PDF. |
-| RF15 | Itens excluídos vão para uma lixeira e podem ser restaurados. |
+| RF02 | O mestre cria, edita, pausa, encerra e arquiva mesas, sem limite de quantidade. |
+| RF03 | A página da mesa mostra sinopse, personagens, locais, facções, itens, sessões, ganchos em aberto e linha do tempo. |
+| RF04 | O mestre cria personagens do tipo PJ (com o nome do jogador) ou NPC, com os campos de background e os campos opcionais de Tormenta 20. |
+| RF05 | O mestre cria páginas de locais, facções e itens, com descrição e imagem. |
+| RF06 | Toda página tem um campo de notas secretas, visível só para o mestre. |
+| RF07 | O mestre liga páginas entre si com uma descrição (ex.: "irmã de", "membro de", "sediada em", "em posse de"). |
+| RF08 | O mestre cria uma sessão com número, data, título, preparação e relato. |
+| RF09 | Ao escrever, o mestre menciona qualquer página com @ e o sistema registra a aparição na sessão. |
+| RF10 | Cada página lista as sessões em que apareceu, os eventos de que participou e as páginas ligadas a ela. |
+| RF11 | O mestre registra eventos marcantes na linha do tempo, ligados a uma sessão e a páginas. |
+| RF12 | O mestre cria ganchos, os liga à sessão em que surgiram e os marca como resolvidos. |
+| RF13 | Cada mesa tem uma galeria de imagens (mapas, handouts) que podem ser inseridas nos textos. |
+| RF14 | A busca encontra mesas, páginas, sessões e trechos de texto. |
+| RF15 | O editor aceita formatação básica, imagens, colagem de textos longos e salva automaticamente. |
+| RF16 | O mestre exporta uma mesa inteira em Markdown ou PDF. |
+| RF17 | Itens excluídos vão para uma lixeira e podem ser restaurados. |
 
 ## Requisitos não funcionais
 
@@ -112,45 +116,53 @@ As regras do caderno são sobre como as informações se ligam e como nada se pe
 
 | ID | Área | Regra |
 | --- | --- | --- |
-| RN01 | Mesa | Todo personagem, sessão, evento e gancho pertence a uma mesa. Mundos compartilhados ficam para a Fase 2. |
+| RN01 | Mesa | Toda página, sessão, evento e gancho pertence a uma única mesa. Mesas não compartilham conteúdo: cada campanha é única. |
 | RN02 | Mesa | Status possíveis: Em andamento, Pausada, Encerrada. Mesa encerrada continua editável e consultável. |
-| RN03 | Personagem | Todo personagem é PJ ou NPC. PJ tem o nome do jogador; NPC não. |
-| RN04 | Personagem | Personagem morto ou desaparecido nunca some do histórico: muda de situação, não é apagado. |
-| RN05 | Personagem | Notas secretas são marcadas como "só mestre" desde o início, para que nunca apareçam numa futura visão do jogador. |
-| RN06 | Sessão | Sessões são numeradas em sequência dentro da mesa; o número é sugerido e pode ser editado. |
-| RN07 | Sessão | Status possíveis: Planejada (só preparação), Realizada (com relato), Cancelada. |
-| RN08 | Sessão | Mencionar um personagem no relato registra a aparição dele naquela sessão; remover a menção remove a aparição. |
-| RN09 | Linha do tempo | Eventos são ordenados pela sessão; uma data no mundo de jogo é opcional (sugerido). |
-| RN10 | Ganchos | Um gancho nasce numa sessão e fica aberto até ser marcado como resolvido, com a sessão em que se resolveu. |
-| RN11 | Ganchos | Ao criar uma nova sessão, os ganchos em aberto aparecem na preparação (sugerido). |
-| RN12 | Exclusão | Excluir manda para a lixeira por 30 dias antes de apagar de vez (sugerido). |
+| RN03 | Páginas | Toda página é de um tipo: Personagem, Local, Facção ou Item. O nome é único dentro da mesa, para que a menção @ não seja ambígua. |
+| RN04 | Personagem | Todo personagem é PJ ou NPC. PJ tem o nome do jogador; NPC não. Campos de T20 são opcionais. |
+| RN05 | Páginas | Personagem morto, local destruído ou item perdido nunca some do histórico: muda de situação, não é apagado. |
+| RN06 | Páginas | Notas secretas são marcadas como "só mestre" desde o início, para que nunca apareçam numa futura visão do jogador. |
+| RN07 | Sessão | Sessões são numeradas em sequência dentro da mesa; o número é sugerido e pode ser editado. |
+| RN08 | Sessão | Status possíveis: Planejada (só preparação), Realizada (com relato), Cancelada. |
+| RN09 | Menções | Mencionar uma página no relato registra a aparição dela naquela sessão; remover a menção remove a aparição. Renomear a página atualiza as menções. |
+| RN10 | Linha do tempo | Eventos são ordenados pela sessão; uma data no mundo de jogo é opcional (sugerido). |
+| RN11 | Ganchos | Um gancho nasce numa sessão e fica aberto até ser marcado como resolvido, com a sessão em que se resolveu. |
+| RN12 | Ganchos | Ao criar uma nova sessão, os ganchos em aberto aparecem na preparação (sugerido). |
+| RN13 | Imagens | Imagens pertencem à mesa e são privadas; limite sugerido de 10 MB por arquivo. |
+| RN14 | Exclusão | Excluir manda para a lixeira por 30 dias antes de apagar de vez (sugerido). |
 
 ## Entidades e modelo de dados
 
-O MVP precisa de 7 entidades; a Aparição é o que faz o caderno se organizar sozinho, porque nasce de cada menção a um personagem no diário.
+O MVP precisa de 8 entidades. Personagens, locais, facções e itens são tipos de uma mesma entidade, a Página, e por isso todos podem ser mencionados e ligados entre si. A Aparição é o que faz o caderno se organizar sozinho: nasce de cada menção no diário.
 
 ```mermaid
 erDiagram
-    MESA ||--o{ PERSONAGEM : "tem"
+    MESA ||--o{ PAGINA : "tem"
     MESA ||--o{ SESSAO : "tem"
-    PERSONAGEM ||--o{ APARICAO : "aparece em"
+    MESA ||--o{ IMAGEM : "guarda"
+    PAGINA ||--o{ APARICAO : "aparece em"
     SESSAO ||--o{ APARICAO : "registra"
-    PERSONAGEM ||--o{ RELACIONAMENTO : "liga-se a outro"
+    PAGINA ||--o{ LIGACAO : "liga-se a outra"
     SESSAO ||--o{ EVENTO : "gera"
     SESSAO ||--o{ GANCHO : "abre"
 ```
 
-Eventos também se ligam aos personagens envolvidos, e um gancho guarda a sessão em que surgiu e a sessão em que foi resolvido.
+Eventos também se ligam às páginas envolvidas, e um gancho guarda a sessão em que surgiu e a sessão em que foi resolvido.
 
 | Entidade | Atributos principais |
 | --- | --- |
-| Mesa | nome, sistema, cenário, status, sinopse, jogadores, capa |
-| Personagem | mesa, tipo (PJ ou NPC), nome, jogador (só PJ), aparência, personalidade, background, objetivos, situação, retrato, notas secretas |
-| Relacionamento | personagem A, personagem B, descrição (ex.: "mentor de") |
+| Mesa | nome, sistema (padrão Tormenta 20), cenário, status, sinopse, jogadores, capa |
+| Página | mesa, tipo (personagem, local, facção, item), nome, descrição, imagem, situação, notas secretas, mais os campos do tipo (abaixo) |
+| • Personagem | PJ ou NPC, jogador (só PJ), aparência, personalidade, background, objetivos; T20 opcional: raça, classe, origem, divindade, nível |
+| • Local | região ou local pai (ex.: taverna dentro de uma cidade) |
+| • Facção | objetivos, líder |
+| • Item | portador atual |
+| Ligação | página A, página B, descrição (ex.: "membro de", "em posse de") |
 | Sessão | mesa, número, data, título, status, preparação, relato |
-| Aparição | sessão, personagem (gerada pelas menções) |
-| Evento | mesa, sessão, título, descrição, personagens envolvidos, data no mundo de jogo (opcional) |
+| Aparição | sessão, página (gerada pelas menções) |
+| Evento | mesa, sessão, título, descrição, páginas envolvidas, data no mundo de jogo (opcional) |
 | Gancho | mesa, descrição, sessão de origem, status, sessão de resolução |
+| Imagem | mesa, arquivo, legenda, tipo (retrato, mapa, handout) |
 
 ## Fluxos principais
 
@@ -167,10 +179,11 @@ O uso gira em torno do ciclo de cada sessão: preparar, jogar, registrar, e o qu
 
 **Começar uma mesa**
 
-1. O mestre cria a mesa com nome, sistema, cenário e sinopse.
-2. Cadastra os PJs com o nome dos jogadores e o background de cada um.
-3. Cadastra os NPCs principais e os relacionamentos entre eles e os PJs.
-4. Se a mesa já está em andamento, registra um resumo das sessões anteriores como eventos da linha do tempo.
+1. O mestre cria a mesa com nome, cenário e sinopse (sistema já vem como Tormenta 20).
+2. Cola nos campos certos o que já tem nas anotações atuais: PJs com o nome dos jogadores, NPCs, locais, facções e itens principais.
+3. Liga as páginas entre si (quem pertence a qual facção, quem carrega qual item).
+4. Sobe os mapas e handouts para a galeria.
+5. Registra um resumo das sessões já jogadas como eventos da linha do tempo.
 
 **Reencontrar uma informação**
 
@@ -182,7 +195,7 @@ O uso gira em torno do ciclo de cada sessão: preparar, jogar, registrar, e o qu
 
 O MVP dá certo se, depois de um mês, a plataforma for o único lugar onde o mestre anota e consulta suas mesas.
 
-- Todas as mesas em andamento cadastradas, com PJs e NPCs principais.
+- As 3 mesas em andamento cadastradas, com PJs, NPCs, locais e facções principais.
 - Um diário escrito para cada sessão jogada, em até 2 dias depois dela.
 - Qualquer personagem ou acontecimento encontrado em menos de 10 segundos.
 - Preparação de sessão feita a partir da plataforma, sem voltar a anotações antigas.
@@ -194,20 +207,20 @@ O maior risco é virar "mais um Notion": ferramentas como Notion, Obsidian, Worl
 | Risco | Impacto | Mitigação |
 | --- | --- | --- |
 | Não ser melhor que as ferramentas que o mestre já usa | Alto | Focar no ciclo da sessão, menções e ganchos; testar com mesas reais desde as primeiras semanas |
-| Escopo crescer para worldbuilding completo (mapas, genealogias, wikis) | Alto | Locais, facções e itens só na Fase 2; manter a lista "Fora de escopo" |
+| Escopo crescer para worldbuilding completo (mapas, genealogias, wikis) | Alto | Locais, facções e itens usam a mesma estrutura de Página; mapas interativos e genealogias ficam fora; manter a lista "Fora de escopo" |
 | Perder textos escritos | Alto | Salvamento automático, histórico de versões, backup diário e exportação |
-| Migrar as anotações antigas dá trabalho demais | Médio | Permitir começar com um resumo por mesa; importação na Fase 2 |
+| Migrar as anotações antigas dá trabalho demais | Médio | São só 3 mesas: começar colando os textos atuais e um resumo por mesa; importação assistida na Fase 2 |
 | Editor ruim no celular atrapalha durante a sessão | Médio | No celular, priorizar leitura e anotação rápida; escrita longa no computador |
 | Expandir para jogadores exigir refazer o sistema | Médio | Notas secretas marcadas desde já e dados separados por usuário (RN05, RNF09) |
 
 ## Checklist pré-desenvolvimento e próximos passos
 
-O próximo passo é responder as perguntas do início; com elas fechamos o escopo e partimos para os wireframes.
+Com as respostas, o escopo do MVP está fechado, só falta saber se a plataforma será usada no celular durante a sessão; o próximo passo são os wireframes.
 
 **Produto**
 
 - [x] Visão, escopo, requisitos e regras do caderno (este documento)
-- [ ] Responder as perguntas em aberto
+- [ ] Responder as perguntas em aberto (falta: uso no celular e sem internet)
 - [ ] Escrever as histórias de usuário do MVP com critérios de aceite
 - [ ] Escolher uma mesa real para ser a primeira a entrar na plataforma
 
